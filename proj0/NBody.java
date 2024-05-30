@@ -7,6 +7,7 @@ public class NBody {
 
     public static Planet[] readPlanets(String s) {
         In in = new In(s);
+
         int n = in.readInt();
         in.readDouble();
 
@@ -47,8 +48,8 @@ public class NBody {
 
         while (time < T) {
             for (int i = 0; i < n; i++) {
-                double fx = allPlanets[i].calcForceExertedByX(allPlanets);
-                double fy = allPlanets[i].calcForceExertedByY(allPlanets);
+                double fx = allPlanets[i].calcForceExertedByX(allPlanets[i]);
+                double fy = allPlanets[i].calcForceExertedByY(allPlanets[i]);
                 xForces[i] = fx;
                 yForces[i] = fy;
             }
